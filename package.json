@@ -22,5 +22,14 @@
     "websocket-extensions": "^0.1.4",
     "ws": "^7.4.5"
   },
-  "description": "This engine is meant to help take some of the tedious setup out of making browser-based games and toys."
+  "description": "This engine is meant to help take some of the tedious setup out of making browser-based games and toys.",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Packmanager9/Teamwork.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Packmanager9/Teamwork/issues"
+  },
+  "homepage": "https://github.com/Packmanager9/Teamwork#readme"
 }
