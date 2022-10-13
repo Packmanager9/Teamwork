@@ -84,7 +84,7 @@ let takenMap = 0
 let intendingToPlayOnline = 0 
     let enterlock = 0
     let typing = 0
-    let alpha = 1
+    let alpha = 1 
     let textalpha = 1
     let chatsetup = 0
 window.addEventListener('DOMContentLoaded', (event) => {
@@ -32945,7 +32945,7 @@ function padZero(str, len) {
                         }
                     }
 
-                    if (this.movespeedcount % (this.pumpsize*2) == 0) {
+                    if (this.movespeedcount %(20- (this.pumpsize*2)) == 0) {
 
                         // if(this.realPath[this.index+1].occupied == false){
                         //     this.movespeedcount = 0
@@ -33528,7 +33528,7 @@ function padZero(str, len) {
 
             if (this.realPath.length - 1 > this.index) {
                 if (((this.realPath[this.index + 1].walkable == true || (this.submerged == 1 || this.mounted == 0)) && this.realPath[this.index + 1].occupied == false)) {// && (this.realPath[this.index + 1].claimed != true || this.realPath[this.index + 1].claimer == this)) { //?
-                    const rat = (this.movespeedcount + 1) / (this.pumpsize*2)
+                    const rat = (this.movespeedcount + 1) / (20-(this.pumpsize*2))
                     const invrat = 1 - rat
                     this.body.x = ((this.realPath[this.index].x + (this.tile.width * .5)) * invrat) + ((this.realPath[this.index + 1].x + (this.tile.width * .5)) * rat)
                     this.body.y = ((this.realPath[this.index].y + (this.tile.height * .5)) * invrat) + ((this.realPath[this.index + 1].y + (this.tile.height * .5)) * rat)
@@ -33564,7 +33564,9 @@ function padZero(str, len) {
     
         this.tile.hotrock   = 0
         this.faction.hotrock += 1
+        this.health = 666
         this.tile.sourcerock   = -1
+        if(this.factionNum == sandmap.turn){
             this.pumpsize+=1
             if(this.pumpsize >= 9){
                 this.faction.type = 1
@@ -33572,6 +33574,7 @@ function padZero(str, len) {
                 this.pumpsize=1
                 
             }
+        }
             // this.totalBlank(this.tile, this.factionNum, this.pumpsize)
             this.bighunchalagadile = 0
             this.alagadile = 0
