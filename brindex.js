@@ -38,7 +38,7 @@ exts.add(deflate);
 
 const rands = require('./rands.js')
 const PORT = process.env.PORT || 3000;
-const INDEX = '/jumper.html';
+const INDEX = '/newmultiplayer.html';
 const RANDS = '/rands.js';
 const server = express().use((req, res) => res.sendFile(INDEX, { root: __dirname })).listen(PORT, () => console.log(`Listening on ${PORT}`));
 const wss = new Server({ server });
