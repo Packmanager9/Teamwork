@@ -1,9 +1,9 @@
 
 'use strict';
-const electron = require('electron');
-const app = electron.app;
-const ipcMain = electron.ipcMain;
-const BrowserWindow = electron.BrowserWindow;
+// const electron = require('electron');
+// const app = electron.app;
+// const ipcMain = electron.ipcMain;
+// const BrowserWindow = electron.BrowserWindow;
 // const mongoURLx = require("./mongo")
 const express = require('express');
 // const mongoose = require('mongoose');
@@ -367,19 +367,19 @@ setTimeout(function(){
 
 
     function createWindow() {
-      mainWindow = new BrowserWindow({
-        fullscreen: false, 
-        frame: true, 
-        width: 1310,
-        height: 790,
-        opacity: 1,
-        enableRemoteModule: true,
-        backgroundColor: '#2e2c29',
-        webPreferences: {
-          nodeIntegration: true,
-          contextIsolation: false,
-        }
-      });
+    //   mainWindow = new BrowserWindow({
+    //     fullscreen: false, 
+    //     frame: true, 
+    //     width: 1310,
+    //     height: 790,
+    //     opacity: 1,
+    //     enableRemoteModule: true,
+    //     backgroundColor: '#2e2c29',
+    //     webPreferences: {
+    //       nodeIntegration: true,
+    //       contextIsolation: false,
+    //     }
+    //   });
     
     
     //   mainWindow.app = app;
