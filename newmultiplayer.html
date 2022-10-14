@@ -11309,7 +11309,7 @@ function padZero(str, len) {
                             // canvas_context.strokeText("Attack " + Math.ceil(this.faction.units[t].damage * 3) + ", " + "Defense " + Math.ceil(this.faction.units[t].defense), sandmap.window.body.x + sandmap.window.body.width + 10, 85)
                             canvas_context.fillText("Attack " + Math.ceil(this.faction.units[t].damage * 3) + ", " + "Defense " + Math.ceil(this.faction.units[t].defense), facex2 + 72, 44)
                             // canvas_context.strokeText("Speed " + Math.floor((1 / this.faction.units[t].movespeed) * 120) + ", Vision " + this.faction.units[t].sight + ", Range " + this.faction.units[t].attackrange + ", Fire rate " + Math.floor((120 / (gargantuanNumber / this.faction.units[t].firerate))), sandmap.window.body.x + sandmap.window.body.width + 10, 115)
-                            canvas_context.fillText("Speed " + Math.floor((1 / this.faction.units[t].pumpsize) * 120) + ", Vision " + this.faction.units[t].sight + ", Range " + this.faction.units[t].attackrange + ", Fire rate " + Math.floor((120 / (gargantuanNumber / this.faction.units[t].firerate))), facex2 + 72, 56)
+                            canvas_context.fillText("Speed " + Math.floor((1 / (13-this.faction.units[t].pumpsize)) * 120) + ", Vision " + this.faction.units[t].sight + ", Range " + this.faction.units[t].attackrange + ", Fire rate " + Math.floor((120 / (gargantuanNumber / this.faction.units[t].firerate))), facex2 + 72, 56)
                             //     canvas_context.strokeText(this.faction.units[t].stack, sandmap.window.body.x + sandmap.window.body.width + 10, 135)
                             //     canvas_context.fillText(this.faction.units[t].stack, sandmap.window.body.x + sandmap.window.body.width + 10, 135)
                             //     for(let p = 0;p<this.faction.units[t].realPath.length;p++){
@@ -32948,7 +32948,7 @@ function padZero(str, len) {
                         }
                     }
 
-                    if (this.movespeedcount %(20- (this.pumpsize*2)) == 0) {
+                    if (this.movespeedcount %(13- (this.pumpsize)) == 0) {
 
                         // if(this.realPath[this.index+1].occupied == false){
                         //     this.movespeedcount = 0
@@ -33531,7 +33531,7 @@ function padZero(str, len) {
 
             if (this.realPath.length - 1 > this.index) {
                 if (((this.realPath[this.index + 1].walkable == true || (this.submerged == 1 || this.mounted == 0)) && this.realPath[this.index + 1].occupied == false)) {// && (this.realPath[this.index + 1].claimed != true || this.realPath[this.index + 1].claimer == this)) { //?
-                    const rat = (this.movespeedcount + 1) / (20-(this.pumpsize*2))
+                    const rat = (this.movespeedcount + 1) / (13-(this.pumpsize))
                     const invrat = 1 - rat
                     this.body.x = ((this.realPath[this.index].x + (this.tile.width * .5)) * invrat) + ((this.realPath[this.index + 1].x + (this.tile.width * .5)) * rat)
                     this.body.y = ((this.realPath[this.index].y + (this.tile.height * .5)) * invrat) + ((this.realPath[this.index + 1].y + (this.tile.height * .5)) * rat)
