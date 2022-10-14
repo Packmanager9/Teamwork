@@ -35365,12 +35365,14 @@ function padZero(str, len) {
         // }
     }
     // if(sandmap.players.length >= 4){
-        sandmap.players[sandmap.turn].type = 6
+        if(sandmap.turn != -1){
+            sandmap.players[sandmap.turn].type = 6
         sandmap.players[sandmap.turn].isAI = 0
         sandmap.players[sandmap.turn].clickrate = 99999999999
         sandmap.players[sandmap.turn].units = []
         for (let t = 0; t < 1; t++) {
             const agent4 = new Agent(sandmap.blocks[(t + 6)][(worldscale - 6) - t], sandmap.players[sandmap.turn])
+        }
         }
     // }
     start = 1
